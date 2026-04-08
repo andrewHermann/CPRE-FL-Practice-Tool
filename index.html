@@ -99,20 +99,24 @@
     </div>
   </div>
   <p style="font-size:.83rem;color:var(--muted);margin-top:4px;">Die Antwort wird nach jeder Eingabe mit Erklärung angezeigt.</p>
-  <div style="border-top:1px solid var(--border);margin-top:22px;padding-top:16px;">
-    <p style="font-size:.78rem;color:var(--muted);margin-bottom:4px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;">Demo — Ergebnisseite vorab ansehen</p>
+  <div class="explore-section">
+    <div class="explore-header">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;margin-bottom:2px;"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+      Ergebnisse erkunden — ohne Prüfung
+    </div>
+    <p class="explore-desc">Lädt sofort einen vollständigen Auswertungsbildschirm — mit echten Fragen, Kapitelanalyse, Fehlertypen und Fragenübersicht. Jeder Klick generiert einen neuen Fragenpool. Nützlich zum Kennenlernen des Tools, zum Verstehen von Bewertungsmustern oder um zu sehen, welche Fehlertypen zu Bestehen oder Nichtbestehen führen.</p>
     <div class="demo-row">
       <button class="btn-demo fail" onclick="showDemo('fail')">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="vertical-align:middle;margin-right:3px"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-        Nicht bestanden (50 %)
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        Nicht bestanden · 50 %
       </button>
       <button class="btn-demo pass" onclick="showDemo('pass')">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="vertical-align:middle;margin-right:3px"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg>
-        Gerade bestanden (70 %)
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg>
+        Gerade bestanden · 70 %
       </button>
       <button class="btn-demo survival" onclick="showDemo('survival')">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="vertical-align:middle;margin-right:3px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        Survival (40 %)
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="vertical-align:middle;margin-right:4px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        Survival · 40 %
       </button>
     </div>
   </div>
@@ -164,7 +168,7 @@
   </div>
   <div class="result-actions">
     <button class="btn-retry quick" id="btn-retry-same" onclick="retryExam()">Nochmals</button>
-    <button class="btn-menu" onclick="goToMenu()">Modus wechseln</button>
+    <button class="btn-menu" onclick="goToMenu()">Home</button>
     <button class="btn-print" onclick="printResults()">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
       Drucken / PDF
