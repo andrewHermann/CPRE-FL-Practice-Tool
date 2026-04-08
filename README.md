@@ -1,69 +1,118 @@
-# CPRE FL Practice Tool
+# IREB CPRE Foundation Level — Practice Exam
 
-Interactive practice environment for the Certified Professional for Requirements Engineering (CPRE) Foundation Level.
+A self-contained, browser-based practice exam for the **IREB Certified Professional for Requirements Engineering (CPRE) Foundation Level** certification.
 
----
-
-## Scope
-
-This tool is based on the IREB CPRE Foundation Level syllabus Version 3.2.0 (26 February 2024).
-
-It follows:
-- the defined learning objectives (LZ)
-- the cognitive levels (K1–K3)
-- the chapter structure (LE 1–7)
-
-Coverage is derived from the learning objectives defined in the syllabus; individual exam questions may span multiple chapters.
-
-The question pool and explanations represent an independent interpretation of this syllabus and are not an official exam or sample exam.
+No installation. No server. No account. Download, unzip, open `index.html`.
 
 ---
 
-## Purpose
+## How to use
 
-- Support exam preparation  
-- Identify common misunderstanding patterns  
-- Provide structured feedback per syllabus chapter  
+1. Download the latest release zip from the [Releases](../../releases) page
+2. Unzip it
+3. Open `index.html` in any modern browser (Chrome, Firefox, Safari, Edge)
+4. Choose a mode and start
 
----
-
-## Modes
-
-- **Quick Mode**  
-  Short knowledge check
-
-- **Full Mode**  
-  Exam-like simulation (structure and timing aligned with CPRE FL)
-
-- **Survival Mode (optional)**  
-  Advanced training mode focusing on trap recognition  
-  *(not intended as primary exam preparation)*
+No internet connection required after download.
 
 ---
 
-## Usage
+## What this is
 
-- Can be used as-is  
-- Can be adapted for teaching  
-- Can be forked and extended  
+377 exam-style questions organized across three practice modes:
+
+| Mode | Questions | Time | Purpose |
+|------|-----------|------|---------|
+| Quick Run | 20 | 30 min | Fast revision pass |
+| Full Exam | 46 | 75 min | Realistic simulation |
+| Survival Mode | 28 | 32 min | Targeted failure drilling |
+
+Questions are selected by a **blueprint algorithm** that mirrors the official exam structure: LE chapter coverage, K-level balance (K1/K2/K3), and Lernziel diversity.
+
+Results include per-chapter coverage analysis, cognitive level breakdown, error-type classification, and a full question review with explanations.
 
 ---
 
-## Disclaimer
+## Based on
 
-This tool is not affiliated with, endorsed by, or reviewed by the International Requirements Engineering Board (IREB).
+> **IREB CPRE Foundation Level Syllabus Version 3.2.0 — 26 February 2024**
+>
+> Questions are mapped to Lerneinheiten (LE1–LE9) and individual Lernziele (LZ X-Y) as defined in the official syllabus.
 
-It is provided for educational purposes only.
+---
+
+## Question types
+
+- **Single-choice** — select one correct answer from four options
+- **Multiple-choice** — select all correct answers (partial credit not awarded)
+- **K-type (assertion-reason)** — evaluate a claim and its stated justification independently
+
+Five questions include **inline SVG diagrams** testing context diagram reading, use case modelling, state machines, BPMN gateways, and include/extend relationships.
+
+---
+
+## Survival Mode
+
+Survival Mode is deliberately unfair. It front-loads trap questions and terminology pitfalls, applies time pressure, clusters hard questions, and shows you which cognitive trap you fell into on each wrong answer. Use it after you are comfortable passing the full exam — not as an introduction.
+
+---
+
+## For developers
+
+The project is split into clean source files — no build tool required.
+
+```
+index.html              entry point
+src/
+  style.css
+  state.js              mutable exam state
+  utils.js              DOM helpers, shuffle, formatTime
+  data/
+    terms.js            KTYPE_OPTIONS, TERM_MAP_RAW, injectTerms
+    questions-single.js single-choice question pool
+    questions-multi.js  multiple-choice question pool
+    questions-ktype.js  K-type question pool
+    constants.js        MODES, LE_TITLES, LZ_TITLES
+    glossary.js         English glossary
+  engine/
+    enrich.js           question enrichment, inferLE/K/LZ, allQuestions
+    blueprint.js        selectQuestions — blueprint-constrained selection
+    survival.js         selectSurvivalQuestions
+    logic.js            isCorrectAnswer, getTrapLabel, inferErrorType
+  ui/
+    render.js           renderQuestion, answer handlers
+    exam.js             startExam, timer, nextQuestion
+    results.js          finishExam, coverage report, error buckets, review
+    glossary.js         filterGlossary, renderGlossary
+    modal.js            mode start modal
+    demo.js             showDemo, printResults
+```
+
+To build a release zip:
+
+```bash
+./build.sh
+# output: dist/cpre-fl-practice-tool.zip
+```
+
+---
+
+## Legal notice
+
+This tool is an **independent study aid** created by Andrew Hermann. It is not affiliated with, endorsed by, or produced in cooperation with IREB e.V. or any official certification body.
+
+"IREB" and "CPRE" are registered trademarks of IREB e.V. Use of these terms here is purely descriptive.
+
+Questions are original and written by the author based on the published syllabus. No official exam questions have been reproduced.
 
 ---
 
 ## License
 
-MIT License
+MIT License — see [LICENSE](LICENSE).
 
 ---
 
 ## Author
 
-Created by Andrew Hermann  
-Independent work
+Andrew Hermann · Bern, Switzerland
