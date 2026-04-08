@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# Study materials (not tracked)
+*.pdf
+*.xlsx
+CPRE_FL_Mock_Exam.html
+CPRE_FL_Probepruefung_DE.html
+CPRE_FL_Probepruefung_v2.html
+CPRE_FL_Probepruefung_v3_1.html
+CPRE_FL_Probepruefung_v3_2.html
+CPRE_FL_Probepruefung_v3_blueprint.html
