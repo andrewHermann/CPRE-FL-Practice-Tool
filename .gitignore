@@ -1,6 +1,9 @@
 # macOS
 .DS_Store
 
+# Build output
+dist/
+
 # Study materials (not tracked)
 *.pdf
 *.xlsx
