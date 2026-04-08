@@ -213,9 +213,12 @@
   .bucket-qlinks{font-size:.73rem;margin-top:7px;line-height:1.9;flex-wrap:wrap;display:flex;gap:4px;justify-content:center;}
   .bucket-qlinks a{color:inherit;background:rgba(255,255,255,.55);border:1px solid currentColor;border-radius:4px;padding:1px 6px;text-decoration:none;font-weight:700;opacity:.85;}
   .bucket-qlinks a:hover{opacity:1;background:rgba(255,255,255,.85);}
-  /* ── Demo buttons ────────────────────────────────────────── */
-  .demo-row{display:flex;gap:10px;justify-content:center;margin:18px 0 4px;flex-wrap:wrap;}
-  .btn-demo{padding:9px 18px;border-radius:9px;border:2px dashed;cursor:pointer;font-size:.83rem;font-weight:700;background:transparent;transition:background .18s;}
+  /* ── Explore / Demo section ──────────────────────────────── */
+  .explore-section{border-top:1px solid var(--border);margin-top:22px;padding-top:18px;}
+  .explore-header{font-size:.95rem;font-weight:700;color:var(--primary);margin-bottom:8px;}
+  .explore-desc{font-size:.83rem;color:var(--muted);line-height:1.6;margin-bottom:14px;text-align:left;}
+  .demo-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+  .btn-demo{padding:10px 20px;border-radius:9px;border:2px dashed;cursor:pointer;font-size:.85rem;font-weight:700;background:transparent;transition:background .18s;}
   .btn-demo.fail{border-color:var(--red);color:var(--red);}.btn-demo.fail:hover{background:#fdecea;}
   .btn-demo.pass{border-color:var(--green);color:var(--green);}.btn-demo.pass:hover{background:#e6f9f1;}
   .btn-demo.survival{border-color:#c0392b;color:#c0392b;}.btn-demo.survival:hover{background:#fdf0ef;}
